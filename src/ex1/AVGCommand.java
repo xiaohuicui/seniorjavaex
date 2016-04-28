@@ -1,5 +1,5 @@
 package ex1;
-
+//
 
 public class AVGCommand implements Command {
 
