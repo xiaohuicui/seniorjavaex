@@ -11,7 +11,6 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
 
@@ -25,7 +24,7 @@ public class AnnotationProcessor {
     public static void processAnnotations(String clazz){
         try{
             Class entityClass = Class.forName(clazz);
-            if(entityClass.isAnnotationPresent(entityClass)) {
+            if(entityClass.isAnnotationPresent(Entity.class)) {
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder builder = factory.newDocumentBuilder();
                 Document document = builder.newDocument();
@@ -79,6 +78,6 @@ public class AnnotationProcessor {
     }
 
     public static void main(String[] args){
-        AnnotationProcessor.processAnnotations("Student");
+        AnnotationProcessor.processAnnotations("ex2.Student");
     }
 }
